@@ -45,6 +45,12 @@ export class SeedService {
         password: 'agentdiego1234',
         role: UserRole.AGENT,
       },
+      {
+        name: 'juancano',
+        email: 'juancanodevog@gmail.com',
+        password: 'HablameloPrro69',
+        role: UserRole.SUPERADMIN,
+      },
     ];
 
     for (const user of users) {
