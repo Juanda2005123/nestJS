@@ -9,6 +9,19 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
+  // Configurar CORS
+  app.enableCors({
+    origin: [
+      'http://localhost:3000',
+      'https://nextjs-inmobiliaria.vercel.app',
+      'https://nextjs-inmobiliaria-git-main-jruiz1601s-projects.vercel.app',
+      /\.vercel\.app$/, // Permite todos los subdominios de vercel
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  });
+
   // Configuración de Swagger
   const config = new DocumentBuilder()
     .setTitle('Real Estate API')
